@@ -56,7 +56,7 @@ public class MvcApplicationConfig extends WebSecurityConfigurerAdapter {
     addDefaultUser();
 
     System.err.println("USERNAME: user PASSWORD: 123");
-    System.err.println("USERNAME: admin PASSWORD: 123");
+    System.err.println("USERNAME: admin PASSWORD: 000");
 
     provider.setPasswordEncoder(passwordEncoder);
     provider.setUserDetailsService(userService);
@@ -78,7 +78,7 @@ public class MvcApplicationConfig extends WebSecurityConfigurerAdapter {
     final User admin = new User();
 
     admin.setUsername("admin");
-    admin.setPassword(passwordEncoder.encode("123"));
+    admin.setPassword(passwordEncoder.encode("000"));
     admin.setRoles(Set.of("ADMIN"));
 
     return userService.save(admin);
